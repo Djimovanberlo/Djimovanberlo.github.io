@@ -1,0 +1,71 @@
+.h1,
+.h2,
+.h3 {
+  font-family: 'CrimsonText-Regular', serif;
+  font-weight: normal;
+  line-height: 100%;
+
+  &[data-underline='true'] {
+    text-decoration: underline;
+    text-decoration-color: var(--primary-color);
+  }
+}
+
+.p,
+.label {
+  font-family: 'WorkSans-Regular', sans-serif;
+  font-weight: normal;
+}
+
+.p {
+  font-size: 0.75rem;
+  line-height: 175%;
+
+  @include screen-md {
+    font-size: 1rem;
+  }
+}
+
+.label {
+  font-size: 0.5rem;
+
+  @include screen-md {
+    font-size: 0.65rem;
+  }
+}
+
+.h1 {
+  font-size: 6rem;
+
+  @include screen-md {
+    font-size: 9rem;
+  }
+
+  @include screen-xl {
+    font-size: 12rem;
+  }
+}
+
+.h2 {
+  font-size: 2rem;
+
+  @include screen-md {
+    font-size: 3rem;
+  }
+
+  @include screen-xl {
+    font-size: 4rem;
+  }
+}
+
+.h3 {
+  font-size: 1rem;
+
+  @include screen-md {
+    font-size: 1.5rem;
+  }
+
+  @include screen-xl {
+    font-size: 2rem;
+  }
+}

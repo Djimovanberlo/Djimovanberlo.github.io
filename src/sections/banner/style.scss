@@ -1,0 +1,57 @@
+$animation-duration: 1s;
+
+.banner {
+  --primary-color: var(--light-blue);
+  --secondary-color: var(--black);
+  --background-color: var(--dark-blue);
+  --color: var(--white);
+
+  display: grid;
+  place-items: center;
+  position: relative;
+
+  &__container {
+    text-align: center;
+
+    & > {
+      .h1 > span,
+      .h2 {
+        $delay: calc(var(--delay) * 0.05s);
+        @include fade-in;
+        animation-name: fade-in;
+        animation-duration: $animation-duration;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: both;
+        animation-delay: $delay;
+      }
+    }
+  }
+
+  &__arrow {
+    position: absolute;
+    bottom: $space-xl;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 4rem;
+    height: 4rem;
+    $delay: calc(var(--delay) * 0.08s);
+    @include fade-in;
+    @include slide-in-bot;
+    animation-name: fade-in, slide-in-bot;
+    animation-duration: $animation-duration;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: both;
+    animation-delay: $delay;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    @include screen-md {
+      width: 6rem;
+      height: 6rem;
+    }
+  }
+}

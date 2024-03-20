@@ -1,0 +1,13 @@
+.contact {
+  --primary-color: var(--red);
+  --secondary-color: var(--light-blue);
+  --background-color: var(--black);
+  --color: var(--white);
+
+  display: grid;
+  place-items: center;
+
+  &__container > .p {
+    max-width: 50rem;
+  }
+}

@@ -1,0 +1,36 @@
+$animation-duration: 1s;
+
+.about {
+  --primary-color: var(--dark-blue);
+  --secondary-color: var(--white);
+  --background-color: var(--light-blue);
+  --color: var(--black);
+
+  display: grid;
+  place-items: center;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $space-md;
+
+    & .about__contentPersonal,
+    & .about__contentProfessional {
+      @include fade-in;
+      animation-duration: $animation-duration;
+      animation-timing-function: ease-in-out;
+      animation-fill-mode: both;
+    }
+
+    & .about__contentPersonal {
+      @include slide-in-left;
+      animation-name: fade-in, slide-in-left;
+    }
+
+    & .about__contentProfessional {
+      @include slide-in-right;
+      animation-name: fade-in, slide-in-right;
+    }
+  }
+}

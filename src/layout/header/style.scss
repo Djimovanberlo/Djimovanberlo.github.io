@@ -1,0 +1,44 @@
+.header {
+  position: fixed;
+  z-index: 200;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: var(--background-color);
+  color: var(--color);
+  transition: all 0.5s ease-in-out;
+  padding: $space-xs;
+
+  @include screen-md {
+    padding: $space-xs $space-sm;
+  }
+
+  &[data-name='banner'] {
+    --primary-color: var(--light-blue);
+    --secondary-color: var(--black);
+    --background-color: 'transparent';
+    --color: var(--white);
+  }
+
+  &[data-name='about'] {
+    --primary-color: var(--red);
+    --secondary-color: var(--white);
+    --background-color: var(--white);
+    --color: var(--black);
+  }
+
+  &[data-name='projects'] {
+    --primary-color: var(--light-blue);
+    --secondary-color: var(--black);
+    --background-color: var(--black);
+    --color: var(--white);
+  }
+
+  &[data-name='contact'] {
+    --primary-color: var(--dark-blue);
+    --secondary-color: var(--white);
+    --background-color: var(--light-blue);
+    --color: var(--black);
+  }
+}

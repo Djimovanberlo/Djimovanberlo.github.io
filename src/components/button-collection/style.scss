@@ -1,0 +1,22 @@
+.buttonCollection {
+  position: relative;
+  display: flex;
+  gap: $space-xxs;
+  z-index: 100;
+
+  &::after {
+    content: '';
+    display: block;
+    width: var(--width);
+    height: var(--height);
+    transform: translateX(var(--left));
+    background-color: var(--primary-color);
+    z-index: -1;
+    position: absolute;
+    transition: all 0.5s ease-in-out;
+  }
+
+  @include screen-md {
+    gap: $space-md;
+  }
+}

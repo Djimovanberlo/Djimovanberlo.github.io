@@ -1,0 +1,18 @@
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: $space-md;
+  padding-top: $space-md;
+  margin-inline: auto;
+  width: min(100%, 25rem);
+
+  &__bot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    & > .hoverButton {
+      margin-left: auto;
+    }
+  }
+}

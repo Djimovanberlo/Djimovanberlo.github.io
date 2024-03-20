@@ -1,0 +1,39 @@
+.input {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  &__field {
+    padding: $space-xs 0;
+    border-style: hidden hidden groove;
+    border-bottom: 1px solid var(--color);
+    background-color: var(--background-color);
+    color: var(--color);
+    font-family: 'WorkSans-Regular', sans-serif;
+    font-weight: normal;
+
+    &::placeholder {
+      color: darken(#fff, 50%);
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &:-webkit-autofill {
+      background-color: transparent !important;
+    }
+  }
+
+  &__textArea {
+    max-width: 100%;
+    resize: none;
+  }
+
+  &__feedback {
+    position: absolute;
+    font-style: italic;
+    color: var(--red);
+    bottom: -1.5rem;
+  }
+}

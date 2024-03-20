@@ -1,0 +1,93 @@
+/*
+  ANIMATION MIXINS
+*/
+
+@mixin keyframes($name) {
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+@mixin fade-in {
+  @include keyframes(fade-in) {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}
+
+@mixin slide-in-left {
+  @include keyframes(slide-in-left) {
+    0% {
+      transform: translateX(20px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+}
+
+@mixin slide-in-right {
+  @include keyframes(slide-in-right) {
+    0% {
+      transform: translateX(-20px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+}
+
+@mixin slide-in-bot {
+  @include keyframes(slide-in-bot) {
+    0% {
+      transform: translateY(100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+}
+
+/*----------------------------------------------------------------*/
+
+/*
+  MEDIA QUERIES MIXINS
+*/
+
+@mixin min-width($threshold) {
+  @media screen and (min-width: pixel-to-em($threshold)) {
+    @content;
+  }
+}
+
+// Small devices
+@mixin screen-sm($threshold: $break-sm) {
+  @media screen and (min-width: #{$threshold}) {
+    @content;
+  }
+}
+
+// Medium devices
+@mixin screen-md($threshold: $break-md) {
+  @media screen and (min-width: #{$threshold}) {
+    @content;
+  }
+}
+
+// Large devices
+@mixin screen-lg($threshold: $break-lg) {
+  @media screen and (min-width: #{$threshold}) {
+    @content;
+  }
+}
+
+// Extra large devices
+@mixin screen-xl($threshold: $break-xl) {
+  @media screen and (min-width: #{$threshold}) {
+    @content;
+  }
+}

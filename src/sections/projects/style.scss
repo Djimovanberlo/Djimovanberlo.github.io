@@ -1,0 +1,15 @@
+.projects {
+  --primary-color: var(--dark-blue);
+  --secondary-color: var(--black);
+  --background-color: var(--red);
+  --color: var(--white);
+
+  display: grid;
+  place-items: center;
+  position: relative;
+
+  &__container > .p {
+    margin-bottom: $space-sm;
+    max-width: 50rem;
+  }
+}

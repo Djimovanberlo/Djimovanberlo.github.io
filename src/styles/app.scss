@@ -1,0 +1,54 @@
+:root {
+  --light-blue: hsl(189, 100%, 35%);
+  --red: hsl(0, 100%, 30%);
+  --dark-blue: hsl(237, 100%, 20%);
+  --black: hsl(0, 0%, 0%);
+  --white: hsl(0, 0%, 100%);
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  font-style: normal;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'CrimsonText-Regular';
+  src: url('../assets/fonts/CrimsonText-Regular.woff') format('woff');
+  fonst-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'WorkSans-Regular';
+  src: url('../assets/fonts/WorkSans-Regular.woff') format('woff');
+  fonst-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'WorkSans-Bold';
+  src: url('../assets/fonts/WorkSans-Bold.woff') format('woff');
+  fonst-style: normal;
+  font-display: swap;
+}

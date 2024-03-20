@@ -1,0 +1,39 @@
+.projectsGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-xs;
+  max-width: 26rem;
+  justify-content: center;
+  margin-inline: auto;
+
+  &__cell {
+    position: relative;
+    display: grid;
+    place-items: center;
+
+    & > img {
+      background-repeat: no-repeat;
+      object-fit: cover;
+      width: 6rem;
+      aspect-ratio: 1 / 1;
+    }
+
+    & > span {
+      text-align: center;
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+
+      & > .p {
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: black;
+        font-family: 'WorkSans-Bold', sans-serif;
+      }
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
