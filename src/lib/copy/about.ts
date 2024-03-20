@@ -4,6 +4,7 @@ import amsterdamImg from 'assets/images/amsterdam.svg'
 import ollinImg from 'assets/images/olln.png'
 import personalImg from 'assets/images/personal.png'
 import professionalImg from 'assets/images/professional.png'
+import denHaagImg from 'assets/images/den-haag.png'
 import { StackNames } from 'components/tech-stack'
 
 export const timeLine = [
@@ -20,8 +21,12 @@ export const timeLine = [
     icon: amsterdamImg,
   },
   {
-    tooltipText: 'Living in Louvain la Neuve while working remotely',
+    tooltipText: 'Lived in Louvain la Neuve while working remotely',
     icon: ollinImg,
+  },
+  {
+    tooltipText: 'Moved to The Hague in 2024',
+    icon: denHaagImg,
   },
 ]
 
@@ -34,9 +39,7 @@ const personal = {
   img: personalImg,
 }
 
-const stack = Object.values(StackNames).filter(
-  stack => stack !== StackNames.Bootstrap && stack !== StackNames.Sequelize
-)
+const stack = Object.values(StackNames).filter(stack => stack !== StackNames.Bootstrap && stack !== StackNames.Sequelize)
 
 const professional = {
   title: 'Professional',

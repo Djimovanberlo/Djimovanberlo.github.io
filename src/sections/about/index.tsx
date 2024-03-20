@@ -13,33 +13,20 @@ const AboutSection = () => {
   const handleClick = evt => {
     evt.preventDefault()
     const buttonText = evt.target.textContent
-    setAboutState(about[buttonText])
+    setAboutState(about[buttonText] ?? '')
   }
 
-  const buttons = Object.keys(about).map((buttonName, index) => ({
+  const buttons = Object.keys(about).map(buttonName => ({
     buttonName,
     text: buttonName,
   }))
-  const activeButtonIndex = buttons
-    .map(({ buttonName }) => buttonName)
-    .findIndex(buttonName => buttonName === aboutState.title.toLowerCase())
+  const activeButtonIndex = buttons.map(({ buttonName }) => buttonName).findIndex(buttonName => buttonName === aboutState.title.toLowerCase())
 
   return (
     <Section name={SectionNames.About}>
       <div className='about__container'>
-        <AboutContent
-          key={aboutState.title}
-          className={`about__content${aboutState.title}`}
-          title={aboutState.title}
-          text={aboutState.text}
-          stack={aboutState.stack}
-          imgSrc={aboutState.img}
-        />
-        <ButtonCollection
-          activeIndex={activeButtonIndex}
-          buttons={buttons}
-          handleClick={handleClick}
-        />
+        <AboutContent key={aboutState.title} className={`about__content${aboutState.title}`} title={aboutState.title} text={aboutState.text} stack={aboutState.stack} imgSrc={aboutState.img} />
+        <ButtonCollection activeIndex={activeButtonIndex} buttons={buttons} handleClick={handleClick} />
         <Timeline />
       </div>
     </Section>

@@ -9,43 +9,29 @@ const BannerSection = () => {
   const id = useId()
 
   const djimoArr = 'Djimo van Berlo'.split('')
-
-  const uniqueRandomNums: number[] = []
-  while (uniqueRandomNums.length < djimoArr.length) {
-    const randomNum = Math.floor(Math.random() * djimoArr.length)
-    if (!uniqueRandomNums.includes(randomNum)) uniqueRandomNums.push(randomNum)
-  }
-
+  const uniqueRandomNums = Array.from({ length: djimoArr.length }, () => Math.floor(Math.random() * djimoArr.length))
   const djimoArrWithRandomNums = djimoArr.map((letter, index) => ({
     letter,
     num: uniqueRandomNums[index],
   }))
 
-  const handleClickScroll = evt => {
-    evt.preventDefault()
-    const element = document.getElementById(SectionNames.About)
-    if (element) element.scrollIntoView({ behavior: 'smooth' })
-  }
+  const delayStyle = (value: number) => ({ '--delay': value } as CSSProperties)
 
   return (
     <Section name={SectionNames.Banner}>
       <div className='banner__container'>
         <H1>
           {djimoArrWithRandomNums.map(({ letter, num }, index) => (
-            <span key={id + index} style={{ '--delay': num } as CSSProperties}>
+            <span key={id + index} style={delayStyle(num)}>
               {letter}
             </span>
           ))}
         </H1>
-        <H2 style={{ '--delay': djimoArr.length } as CSSProperties}>
-          Frontend Developer
-        </H2>
+        <H2 style={delayStyle(djimoArr.length)}>Frontend Developer</H2>
       </div>
-      <GoArrowDown
-        onClick={handleClickScroll}
-        style={{ '--delay': djimoArr.length } as CSSProperties}
-        className='banner__arrow'
-      />
+      <a href={`#${SectionNames.About}`}>
+        <GoArrowDown style={delayStyle(djimoArr.length)} className='banner__arrow' />
+      </a>
     </Section>
   )
 }

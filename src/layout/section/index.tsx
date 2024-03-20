@@ -1,6 +1,7 @@
-import { ReactNode } from 'react'
+import { ReactNode, useEffect, useRef } from 'react'
 
 import { SectionNames } from 'interfaces/layout'
+import { useDynamicRefs } from 'lib/hooks/useDynamicRefs'
 
 interface Props {
   name: SectionNames
@@ -8,8 +9,15 @@ interface Props {
 }
 
 const Section = ({ name, children }: Props) => {
+  const { addSectionRef } = useDynamicRefs()
+  const sectionRef = useRef(null)
+
+  useEffect(() => {
+    addSectionRef(sectionRef)
+  }, [addSectionRef])
+
   return (
-    <section id={name} className={`section ${name}`}>
+    <section id={name} ref={sectionRef} className={`section ${name}`}>
       {children}
     </section>
   )
