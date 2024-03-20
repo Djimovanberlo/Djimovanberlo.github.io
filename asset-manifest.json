@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.19be040f.css",
-    "main.js": "/static/js/main.b6c8f660.js",
+    "main.js": "/static/js/main.fe6636e1.js",
     "static/js/787.9d744167.chunk.js": "/static/js/787.9d744167.chunk.js",
     "static/media/wedding.png": "/static/media/wedding.521e5b988d43252aea9e.png",
     "static/media/talent-calc.png": "/static/media/talent-calc.ea3bf96b631a636792e9.png",
@@ -14,6 +14,7 @@
     "static/media/personal.png": "/static/media/personal.69c879eb14da23358c7b.png",
     "static/media/portfolio.png": "/static/media/portfolio.ee80f57664d5a9171690.png",
     "static/media/card-generator.png": "/static/media/card-generator.280c9a89dfce463a198f.png",
+    "static/media/den-haag.png": "/static/media/den-haag.6acd18a0f2322b5d7ecb.png",
     "static/media/ancient-basement.png": "/static/media/ancient-basement.c4783683d9a68834bdfa.png",
     "static/media/olln.png": "/static/media/olln.331a8944715116e7f226.png",
     "static/media/WorkSans-Bold.woff": "/static/media/WorkSans-Bold.9ab52d2504cfe145b9bd.woff",
@@ -23,11 +24,11 @@
     "index.html": "/index.html",
     "static/media/amsterdam.svg": "/static/media/amsterdam.b56a8a5d02de968dafbb679ceb3be20e.svg",
     "main.19be040f.css.map": "/static/css/main.19be040f.css.map",
-    "main.b6c8f660.js.map": "/static/js/main.b6c8f660.js.map",
+    "main.fe6636e1.js.map": "/static/js/main.fe6636e1.js.map",
     "787.9d744167.chunk.js.map": "/static/js/787.9d744167.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.19be040f.css",
-    "static/js/main.b6c8f660.js"
+    "static/js/main.fe6636e1.js"
   ]
 }
