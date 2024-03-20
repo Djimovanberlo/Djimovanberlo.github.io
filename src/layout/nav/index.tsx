@@ -1,7 +1,10 @@
 import ButtonCollection from 'components/button-collection'
 import { SectionNames } from 'interfaces/layout'
+import { useDynamicRefs } from 'lib/hooks/useDynamicRefs'
 
-const Nav = ({ activeId }) => {
+const Nav = () => {
+  const { activeId } = useDynamicRefs()
+
   const handleClick = evt => {
     evt.preventDefault()
 
@@ -13,17 +16,12 @@ const Nav = ({ activeId }) => {
     buttonName: sectionName,
     text: index === 0 ? 'Djimo' : sectionName,
   }))
-  const activeIndex = buttons
-    .map(({ buttonName }) => buttonName)
-    .findIndex(buttonName => buttonName.toLocaleLowerCase() === activeId)
+
+  const activeIndex = buttons.map(({ buttonName }) => buttonName).findIndex(buttonName => buttonName.toLocaleLowerCase() === activeId)
 
   return (
     <nav className='nav'>
-      <ButtonCollection
-        activeIndex={activeIndex}
-        buttons={buttons}
-        handleClick={handleClick}
-      />
+      <ButtonCollection activeIndex={activeIndex} buttons={buttons} handleClick={handleClick} />
     </nav>
   )
 }

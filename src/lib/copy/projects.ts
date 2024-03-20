@@ -20,7 +20,7 @@ const sisoe = {
 
 const taalkundig = {
   title: 'Taalkundig',
-  text: 'Taalkundig is a blog website I built for my brother. It has a homepage - which holds a blog post overview, a blog post detail page and a short about page. The website is built with React, Sass, GraphQL and Contentful. Although the code is ready, the content hasnot been added yet.',
+  text: 'Taalkundig is a blog website I built for my brother. It has a homepage - which holds a blog post overview, a blog post detail page and a short about page. The website is built with React, Sass, GraphQL and Contentful. Although the code is ready, the content has not been added yet.',
   imgSrc: taalkundigImg,
   githubLink: 'https://github.com/Djimovanberlo/taalkundig',
   projectLink: 'https://taalkundig.vercel.app/',
@@ -112,7 +112,6 @@ const projects = {
   dinoGame,
 }
 
-export const projectsIntro =
-  'Below are a bunch of my projects. Some of them are still being worked on and some of them are finished. I also included some projects that I am working on with others.'
+export const projectsIntro = 'Below are a bunch of my projects. Some of them are still being worked on and some of them are finished. I also included some projects that I am working on with others.'
 
 export default projects
