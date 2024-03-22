@@ -30,7 +30,7 @@ const BannerSection = () => {
         <H2 style={delayStyle(djimoArr.length)}>Frontend Developer</H2>
       </div>
       <a href={`#${SectionNames.About}`}>
-        <GoArrowDown style={delayStyle(djimoArr.length)} className='banner__arrow' />
+        <GoArrowDown style={delayStyle(djimoArr.length)} />
       </a>
     </Section>
   )
