@@ -1,0 +1,18 @@
+dialog {
+  width: fit-content;
+  max-width: 650px;
+  padding: $space-sm;
+  box-shadow: 0px 0px 10px var(--black);
+  @include fade-in;
+  background-color: var(--background-color);
+  color: var(--color);
+  border: none;
+
+  & > svg {
+    position: absolute;
+    right: 1rem;
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+  }
+}

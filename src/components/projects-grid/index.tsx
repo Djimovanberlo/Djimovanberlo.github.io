@@ -4,24 +4,22 @@ import projects from 'lib/copy/projects'
 import getFlipProperties from 'lib/flip'
 import { P } from 'components/typography'
 
-const Cell = ({ id, title, imgSrc, imgRef, projectsRef, handleChangeActiveProject, singleProjectRef }) => {
+const Cell = ({ id, title, imgSrc, imgRef, handleChangeActiveProject, projectRef }) => {
+  // todo mayb can get some props out of projectRef
   const cellRef = useRef<HTMLImageElement>(null)
 
   const handleClick = () => {
-    handleChangeActiveProject(id)
-    const modalEl = imgRef.current.parentElement
-
-    modalEl.style.setProperty('display', 'grid')
-    // projectsRef.current.style.setProperty('opacity', 0)
-    // projectsRef.current.style.setProperty('transition', 'opacity 0.5s ease-in-out')
+    handleChangeActiveProject(id ?? null)
 
     const prevRect = cellRef?.current?.getBoundingClientRect()!
     const finalRect = imgRef.current.getBoundingClientRect()
 
+    console.log('GRID', 'prev(cell)', prevRect, 'final(img)', finalRect)
+
     const { transforms, options } = getFlipProperties({ prevRect, finalRect })
 
     imgRef.current.animate(transforms, options)
-    singleProjectRef.current = cellRef.current
+    projectRef.current = cellRef.current
   }
 
   return (
@@ -34,13 +32,13 @@ const Cell = ({ id, title, imgSrc, imgRef, projectsRef, handleChangeActiveProjec
   )
 }
 
-const ProjectsGrid = ({ imgRef, projectsRef, handleChangeActiveProject, singleProjectRef }) => {
+const ProjectsGrid = ({ imgRef, handleChangeActiveProject, projectRef }) => {
   const id = useId()
 
   return (
     <div className='projectsGrid'>
       {Object.entries(projects).map(([key, { title, imgSrc }]) => (
-        <Cell singleProjectRef={singleProjectRef} key={id + key} id={key} imgSrc={imgSrc} title={title} imgRef={imgRef} projectsRef={projectsRef} handleChangeActiveProject={handleChangeActiveProject} />
+        <Cell projectRef={projectRef} key={id + key} id={key} imgSrc={imgSrc} title={title} imgRef={imgRef} handleChangeActiveProject={handleChangeActiveProject} />
       ))}
     </div>
   )

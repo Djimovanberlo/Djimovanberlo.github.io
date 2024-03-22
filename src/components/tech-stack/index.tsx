@@ -56,7 +56,7 @@ export const Stack = ({ techStack }: Pick<Props, 'techStack'>) => {
   )
 }
 
-const TechStack = ({ className = '', techStack, githubLink, projectLink }: Props) => {
+const TechStack = ({ className = '', techStack = [], githubLink, projectLink }: Props) => {
   const handleGithubClick = () => {
     window.open(githubLink, '_blank')
   }

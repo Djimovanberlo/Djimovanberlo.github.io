@@ -7,23 +7,24 @@ import ProjectsGrid from 'components/projects-grid'
 import { H2, P } from 'components/typography'
 import ProjectsModal from 'components/projects-modal'
 
+// TODO make whole flip thing in single hook that returns Refs and Functions
 const ProjectsSection = () => {
   const imgRef = useRef<HTMLImageElement>(null)
-  const projectsRef = useRef<HTMLDivElement>(null)
-  const singleProjectRef = useRef<HTMLDivElement>(null)
-  const [projectsState, setProjectsState] = useState(projects.portfolio)
+  const projectRef = useRef<HTMLDivElement>(null)
+  const [projectsState, setProjectsState] = useState<string | null>(null)
 
-  const handleChangeActiveProject = (projectKey: string) => {
-    setProjectsState(projects[projectKey] ?? '')
+  const handleChangeActiveProject = (projectId: string | null) => {
+    setProjectsState(projectId)
+    // setProjectsState(projects[projectKey] ?? '')
   }
 
   return (
     <Section name={SectionNames.Projects}>
-      <ProjectsModal imgRef={imgRef} projectsRef={projectsRef} projectData={projectsState} singleProjectRef={singleProjectRef} />
-      <div ref={projectsRef} className='projects__container'>
+      <ProjectsModal imgRef={imgRef} projectId={projectsState} projectRef={projectRef} handleChangeActiveProject={handleChangeActiveProject} />
+      <div className='projects__container'>
         <H2 isUnderlined>Projects</H2>
         <P>{projectsIntro}</P>
-        <ProjectsGrid imgRef={imgRef} projectsRef={projectsRef} handleChangeActiveProject={handleChangeActiveProject} singleProjectRef={singleProjectRef} />
+        <ProjectsGrid imgRef={imgRef} handleChangeActiveProject={handleChangeActiveProject} projectRef={projectRef} />
       </div>
     </Section>
   )
