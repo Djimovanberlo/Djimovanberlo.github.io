@@ -10,6 +10,7 @@ import ProjectsModal from 'components/projects-modal'
 const ProjectsSection = () => {
   const imgRef = useRef<HTMLImageElement>(null)
   const projectsRef = useRef<HTMLDivElement>(null)
+  const singleProjectRef = useRef<HTMLDivElement>(null)
   const [projectsState, setProjectsState] = useState(projects.portfolio)
 
   const handleChangeActiveProject = (projectKey: string) => {
@@ -18,11 +19,11 @@ const ProjectsSection = () => {
 
   return (
     <Section name={SectionNames.Projects}>
-      <ProjectsModal imgRef={imgRef} projectsRef={projectsRef} projectData={projectsState} />
+      <ProjectsModal imgRef={imgRef} projectsRef={projectsRef} projectData={projectsState} singleProjectRef={singleProjectRef} />
       <div ref={projectsRef} className='projects__container'>
         <H2 isUnderlined>Projects</H2>
         <P>{projectsIntro}</P>
-        <ProjectsGrid imgRef={imgRef} projectsRef={projectsRef} handleChangeActiveProject={handleChangeActiveProject} />
+        <ProjectsGrid imgRef={imgRef} projectsRef={projectsRef} handleChangeActiveProject={handleChangeActiveProject} singleProjectRef={singleProjectRef} />
       </div>
     </Section>
   )
