@@ -8,6 +8,10 @@ import { H2, P } from 'components/typography'
 import ProjectsModal from 'components/projects-modal'
 
 // TODO make whole flip thing in single hook that returns Refs and Functions
+// TODO CELL ref, IMG ref, open flip, close flip funtions out of hook
+// TODO modal ref in this component
+// TODO assign style display: none | display: block to modal ref with open / close functions in this component
+// TODO pass handleOpen and handleClose to modal component and grid component
 const ProjectsSection = () => {
   const imgRef = useRef<HTMLImageElement>(null)
   const projectRef = useRef<HTMLDivElement>(null)

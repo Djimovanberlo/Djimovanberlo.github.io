@@ -8,7 +8,7 @@ import { useOnClickOutside } from 'usehooks-ts'
 import projects from 'lib/copy/projects'
 import Modal from 'components/modal'
 
-// todo lift up logic! to projects component
+// todo lift up logic! to projects component into hook
 const ProjectsModal = ({ imgRef, projectId, projectRef, handleChangeActiveProject }) => {
   const modalRef = useRef<HTMLDialogElement>(null)
   const projectData = projects[projectId]
@@ -40,7 +40,7 @@ const ProjectsModal = ({ imgRef, projectId, projectRef, handleChangeActiveProjec
   useOnClickOutside(modalRef, handleClick)
 
   return (
-    <Modal isOpen={projectId} handleClose={handleClick}>
+    <Modal isOpen={true} handleClose={handleClick}>
       <div className='projectsModal'>
         <img ref={imgRef} src={projectData?.imgSrc} alt='projectImg' className='projectsModal__img' />
         <H3>{projectData?.title}</H3>
