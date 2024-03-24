@@ -4,12 +4,10 @@ import projects from 'lib/copy/projects'
 import { P } from 'components/typography'
 
 const Cell = ({ handleOpen, title, imgSrc, projectRef }) => {
-  // todo mayb can get some props out of projectRef
   const cellRef = useRef<HTMLImageElement>(null)
 
   const handleClick = () => {
     projectRef.current = cellRef.current
-    // console.log('CLICKED', projectRef.current)
     handleOpen()
   }
 

@@ -1,6 +1,7 @@
 import Button from 'components/button'
 import { CSSProperties, useEffect, useId, useRef, useState } from 'react'
 
+// TODO let AI make this into compound pattern
 const ButtonCollection = ({ buttons, activeIndex, handleClick }) => {
   const id = useId()
   const collectionRef = useRef<HTMLDivElement>(null)

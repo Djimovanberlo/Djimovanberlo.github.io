@@ -6,13 +6,20 @@ interface FlipOptions {
 }
 
 const getFlipProperties = ({ prevRect, finalRect }: FlipOptions) => {
+  const dx = prevRect.left - finalRect.left
+  const dy = prevRect.top - finalRect.top
+  const dw = prevRect.width / finalRect.width
+  const dh = prevRect.height / finalRect.height
+
+  console.log('DW', dw, 'DH', dh)
+  // TODO fix scale
   return {
     transforms: [
       {
         transform: `
-                translateX(${prevRect.left - finalRect.left}px)
-                translateY(${prevRect.top - finalRect.top}px)
-                scale(${prevRect.width / finalRect.width})
+                translateX(${dx}px)
+                translateY(${dy}px)
+                scale(${dw}, ${dh})
               `,
       },
       {
@@ -41,17 +48,18 @@ const useFlip = () => {
 
     const prevRect = firstRef?.current?.getBoundingClientRect()!
     const finalRect = secondRef.current.getBoundingClientRect()
+    console.log('FLIP H PREV', firstRef, 'H FIN', secondRef)
     const { transforms, options } = getFlipProperties({ prevRect, finalRect })
 
     secondRef.current.animate(transforms, options)
   }
 
-  console.log('FIRST', firstRef, 'SECOND', secondRef)
   const flipBack = () => {
     if (!firstRef.current || !secondRef.current) return
 
     const prevRect = secondRef.current.getBoundingClientRect()
     const finalRect = firstRef.current?.getBoundingClientRect()!
+    console.log('FLIP BACK H PREV', secondRef, 'H FIN', firstRef)
 
     const { transforms, options } = getFlipProperties({
       prevRect,
