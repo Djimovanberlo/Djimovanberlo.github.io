@@ -1,16 +1,16 @@
 .projectsModal {
-  // width: fit-content;
-  // position: absolute;
-  // z-index: 999;
-  // max-width: 650px;
-  // padding: $space-sm;
-  // box-shadow: 0px 0px 10px var(--black);
-  // @include fade-in;
-  // background-color: var(--background-color);
-  // color: var(--color);
-  // border: none;
+  width: fit-content;
+  position: absolute;
+  z-index: 999;
+  max-width: 650px;
+  padding: $space-sm;
+  box-shadow: 0px 0px 10px var(--black);
+  @include fade-in;
+  background-color: var(--background-color);
+  color: var(--color);
+  border: none;
 
-  display: grid;
+  display: none;
   gap: $space-sm;
   grid-template-columns: 1fr 2fr;
   grid-template-rows: 1fr auto 1fr;

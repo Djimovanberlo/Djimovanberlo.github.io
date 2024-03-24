@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react'
 import { RxCross2 } from 'react-icons/rx'
 
-const Modal = ({ isOpen, handleClose, children }) => {
+const Modal = ({ className = '', isOpen, handleClose, children }) => {
   const modalRef = useRef<HTMLDialogElement | null>(null)
 
   useEffect(() => {
@@ -28,7 +28,7 @@ const Modal = ({ isOpen, handleClose, children }) => {
   }, [isOpen])
 
   return (
-    <dialog ref={modalRef} onCancel={handleClose}>
+    <dialog className={className} ref={modalRef} onCancel={handleClose}>
       <RxCross2 onClick={handleClose} />
       {children}
     </dialog>

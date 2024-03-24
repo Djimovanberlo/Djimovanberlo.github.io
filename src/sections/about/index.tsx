@@ -8,6 +8,7 @@ import AboutContent from 'components/about-content'
 import Timeline from 'components/timeline'
 
 const AboutSection = () => {
+  // TODO change to ID
   const [aboutState, setAboutState] = useState(about.personal)
 
   const handleClick = evt => {
