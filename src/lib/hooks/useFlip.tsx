@@ -24,16 +24,17 @@ const getFlipProperties = ({ prevRect, finalRect }: FlipOptions) => {
       },
     ],
     options: {
-      duration: 500,
+      // TODO normalise MS
+      //   duration: 500,
+      duration: 2000,
       easing: 'cubic-bezier(0.2, 0, 0.2, 1)',
     },
   }
 }
 
 const useFlip = () => {
-  // todo fix any
-  const firstRef = useRef<any>(null)
-  const secondRef = useRef<any>(null)
+  const firstRef = useRef<HTMLElement>(null)
+  const secondRef = useRef<HTMLElement>(null)
 
   const flip = () => {
     if (!firstRef.current || !secondRef.current) return
@@ -45,6 +46,7 @@ const useFlip = () => {
     secondRef.current.animate(transforms, options)
   }
 
+  console.log('FIRST', firstRef, 'SECOND', secondRef)
   const flipBack = () => {
     if (!firstRef.current || !secondRef.current) return
 

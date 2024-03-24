@@ -8,7 +8,7 @@ const Nav = () => {
   const handleClick = evt => {
     evt.preventDefault()
 
-    const element = document.getElementById(evt.target.name.toLowerCase())
+    const element = document.getElementById(evt.target.name.toLowerCase()) // TODO rmv getElementById (let AI clean this 1 up)
     if (element) element.scrollIntoView({ behavior: 'smooth' })
   }
 
