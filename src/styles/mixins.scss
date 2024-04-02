@@ -19,6 +19,17 @@
   }
 }
 
+@mixin fade-out {
+  @include keyframes(fade-out) {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+}
+
 @mixin slide-in-left {
   @include keyframes(slide-in-left) {
     0% {

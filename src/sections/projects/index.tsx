@@ -16,8 +16,8 @@ const ProjectsSection = () => {
   const handleOpen = (id: string) => {
     if (!modalRef.current) return
     setProjectsState(id)
-
     modalRef.current.style.display = 'block'
+
     requestAnimationFrame(() => {
       flip()
     })
@@ -25,8 +25,8 @@ const ProjectsSection = () => {
 
   const handleClose = () => {
     setProjectsState(null)
-
     flipBack()
+
     requestAnimationFrame(() => {
       if (!modalRef.current) return
       modalRef.current.style.display = 'none'

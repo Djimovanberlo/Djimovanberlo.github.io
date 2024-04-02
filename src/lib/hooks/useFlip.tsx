@@ -11,27 +11,33 @@ const getFlipProperties = ({ prevRect, finalRect }: FlipOptions) => {
   const dw = prevRect.width / finalRect.width
   const dh = prevRect.height / finalRect.height
 
-  return {
-    transforms: [
-      {
-        transform: `
+  console.log('PREV', prevRect, 'FINAL', finalRect, 'DX', dx, 'DY', dy, 'DW', dw, 'DH', dh)
+
+  const transforms = [
+    {
+      transform: `
                 translateX(${dx}px)
                 translateY(${dy}px)
                 scale(${dw}, ${dh})
               `,
-      },
-      {
-        transform: `
+    },
+    {
+      transform: `
                 translateX(0)
                 translateY(0)
                 scale(1)
               `,
-      },
-    ],
-    options: {
-      duration: 500,
-      easing: 'cubic-bezier(0.2, 0, 0.2, 1)',
     },
+  ]
+
+  const options = {
+    duration: 500,
+    easing: 'cubic-bezier(0.2, 0, 0.2, 1)',
+  }
+
+  return {
+    transforms,
+    options,
   }
 }
 

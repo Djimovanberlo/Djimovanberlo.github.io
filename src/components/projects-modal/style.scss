@@ -1,3 +1,5 @@
+@include fade-in;
+
 .projectsModal {
   width: fit-content;
   position: absolute;
@@ -5,9 +7,9 @@
   max-width: 650px;
   padding: $space-sm;
   box-shadow: 0px 0px 10px var(--black);
-  @include fade-in;
   background-color: var(--background-color);
   color: var(--color);
+  animation: fade-in 0.3s both;
   display: none;
 
   &__grid {
