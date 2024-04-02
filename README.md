@@ -5,6 +5,7 @@ About time I made a new portfolio. My previous one was made just after I'd finis
 ## About
 
 I have a background in psychology and creating and leading real-life games. In 2020 I retrained as full-stack developer and haven't looked back since. I especially enjoy the mix frontend development offers: a blend of logic, styling and layout architecture. I like to
+// TODO finish copy
 
 ## Stack
 
@@ -12,7 +13,7 @@ This project built using [React](https://react.dev/), [TypeScript](https://www.t
 
 ## Structure
 
-// structure
+// TODO structure
 
 ### `npm start`
 
