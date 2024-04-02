@@ -11,8 +11,6 @@ const getFlipProperties = ({ prevRect, finalRect }: FlipOptions) => {
   const dw = prevRect.width / finalRect.width
   const dh = prevRect.height / finalRect.height
 
-  console.log('DW', dw, 'DH', dh)
-  // TODO fix scale
   return {
     transforms: [
       {
@@ -31,9 +29,7 @@ const getFlipProperties = ({ prevRect, finalRect }: FlipOptions) => {
       },
     ],
     options: {
-      // TODO normalise MS
-      //   duration: 500,
-      duration: 2000,
+      duration: 500,
       easing: 'cubic-bezier(0.2, 0, 0.2, 1)',
     },
   }
@@ -48,7 +44,6 @@ const useFlip = () => {
 
     const prevRect = firstRef?.current?.getBoundingClientRect()!
     const finalRect = secondRef.current.getBoundingClientRect()
-    console.log('FLIP H PREV', firstRef, 'H FIN', secondRef)
     const { transforms, options } = getFlipProperties({ prevRect, finalRect })
 
     secondRef.current.animate(transforms, options)
@@ -59,7 +54,6 @@ const useFlip = () => {
 
     const prevRect = secondRef.current.getBoundingClientRect()
     const finalRect = firstRef.current?.getBoundingClientRect()!
-    console.log('FLIP BACK H PREV', secondRef, 'H FIN', firstRef)
 
     const { transforms, options } = getFlipProperties({
       prevRect,

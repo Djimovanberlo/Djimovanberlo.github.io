@@ -17,18 +17,20 @@ const ProjectsSection = () => {
     if (!modalRef.current) return
     setProjectsState(id)
 
-    // todo experiment with timeout / fade in of modal
     modalRef.current.style.display = 'block'
-    flip()
+    requestAnimationFrame(() => {
+      flip()
+    })
   }
 
   const handleClose = () => {
-    if (!modalRef.current) return
     setProjectsState(null)
 
     flipBack()
-    // todo experiment with timeout / fade in of modal
-    modalRef.current.style.display = 'none'
+    requestAnimationFrame(() => {
+      if (!modalRef.current) return
+      modalRef.current.style.display = 'none'
+    })
   }
 
   return (
