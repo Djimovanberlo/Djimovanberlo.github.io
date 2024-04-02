@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.19be040f.css",
-    "main.js": "/static/js/main.fe6636e1.js",
+    "main.css": "/static/css/main.e0bf5b89.css",
+    "main.js": "/static/js/main.d6704500.js",
     "static/js/787.9d744167.chunk.js": "/static/js/787.9d744167.chunk.js",
     "static/media/wedding.png": "/static/media/wedding.521e5b988d43252aea9e.png",
     "static/media/talent-calc.png": "/static/media/talent-calc.ea3bf96b631a636792e9.png",
@@ -23,12 +23,12 @@
     "static/media/tromso.png": "/static/media/tromso.ede51850567c50391e31.png",
     "index.html": "/index.html",
     "static/media/amsterdam.svg": "/static/media/amsterdam.b56a8a5d02de968dafbb679ceb3be20e.svg",
-    "main.19be040f.css.map": "/static/css/main.19be040f.css.map",
-    "main.fe6636e1.js.map": "/static/js/main.fe6636e1.js.map",
+    "main.e0bf5b89.css.map": "/static/css/main.e0bf5b89.css.map",
+    "main.d6704500.js.map": "/static/js/main.d6704500.js.map",
     "787.9d744167.chunk.js.map": "/static/js/787.9d744167.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.19be040f.css",
-    "static/js/main.fe6636e1.js"
+    "static/css/main.e0bf5b89.css",
+    "static/js/main.d6704500.js"
   ]
 }
