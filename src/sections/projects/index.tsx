@@ -23,6 +23,7 @@ const ProjectsSection = () => {
     })
   }
 
+  // TODO flipBack animation starts slightly left of where it should
   const handleClose = () => {
     setProjectsState(null)
     flipBack()
