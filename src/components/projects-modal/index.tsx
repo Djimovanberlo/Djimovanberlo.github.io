@@ -1,4 +1,5 @@
 import { RxCross2 } from 'react-icons/rx'
+import { useOnClickOutside } from 'usehooks-ts'
 
 import projects from 'lib/copy/projects'
 import TechStack from 'components/tech-stack'
@@ -7,8 +8,12 @@ import { H3, P } from 'components/typography'
 const ProjectsModal = ({ handleClose, imgRef, projectId, modalRef }) => {
   const projectData = projects[projectId]
 
-  // TODO clickoutside
-  // useOnClickOutside(modalRef, handleClose)
+  const closeModal = () => {
+    if (modalRef.current.style.display === 'none') return
+    handleClose()
+  }
+
+  useOnClickOutside(modalRef, closeModal)
 
   return (
     <div className='projectsModal' ref={modalRef}>
