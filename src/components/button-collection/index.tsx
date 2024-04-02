@@ -44,14 +44,6 @@ const ButtonCollection = ({ activeIndex, children }) => {
   return (
     <div ref={collectionRef} className='buttonCollection' style={style}>
       {children}
-      {/* {buttons.map(({ buttonName, text }, index) => {
-        const isActive = activeIndex === index
-        return (
-          <Button key={id + index} name={buttonName} isActive={isActive} handleClick={handleClick}>
-            {text}
-          </Button>
-        )
-      })} */}
     </div>
   )
 }
