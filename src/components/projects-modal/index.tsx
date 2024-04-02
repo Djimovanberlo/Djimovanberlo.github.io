@@ -1,54 +1,29 @@
 import { RxCross2 } from 'react-icons/rx'
+import { useOnClickOutside } from 'usehooks-ts'
 
-import getFlipProperties from 'lib/flip'
+import projects from 'lib/copy/projects'
 import TechStack from 'components/tech-stack'
 import { H3, P } from 'components/typography'
 
-const ProjectsModal = ({ imgRef, projectsRef, projectData }) => {
-  const { title, text, imgSrc, githubLink, projectLink, stack } = projectData
+const ProjectsModal = ({ handleClose, imgRef, projectId, modalRef }) => {
+  const projectData = projects[projectId]
 
-  const handleClick = () => {
-    const dataImage = imgRef?.current?.getAttribute('data-image')
-    const cell = document.querySelector(`[data-key="${dataImage}"]`)
-
-    const modalEl = imgRef.current.parentElement
-    const prevRect = imgRef.current.getBoundingClientRect()
-    const finalRect = cell?.getBoundingClientRect()!
-
-    modalEl.style.display = 'none'
-    projectsRef.current.style.opacity = 1
-    projectsRef.current.style.setProperty(
-      'transition',
-      'opacity 0.5s ease-in-out'
-    )
-
-    const { transforms, options } = getFlipProperties({
-      prevRect,
-      finalRect,
-    })
-
-    cell?.animate(transforms, options)
+  const closeModal = () => {
+    if (modalRef.current.style.display === 'none') return
+    handleClose()
   }
 
+  useOnClickOutside(modalRef, closeModal)
+
   return (
-    <div className='projectsModal'>
-      <img
-        ref={imgRef}
-        src={imgSrc}
-        alt='projectImg'
-        className='projectsModal__img'
-      />
-      <div className='projectsModal__title'>
-        <H3>{title}</H3>
-        <RxCross2 onClick={handleClick} />
+    <div className='projectsModal' ref={modalRef}>
+      <div className='projectsModal__grid'>
+        <RxCross2 onClick={handleClose} />
+        <img ref={imgRef} src={projectData?.imgSrc} alt='projectImg' />
+        <H3>{projectData?.title}</H3>
+        <P>{projectData?.text}</P>
+        <TechStack techStack={projectData?.stack} githubLink={projectData?.githubLink} projectLink={projectData?.projectLink} />
       </div>
-      <P className='projectsModal__body'>{text}</P>
-      <TechStack
-        className='projectsModal__stack'
-        techStack={stack}
-        githubLink={githubLink}
-        projectLink={projectLink}
-      />
     </div>
   )
 }

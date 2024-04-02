@@ -1,8 +1,6 @@
-import Button from 'components/button'
-import { CSSProperties, useEffect, useId, useRef, useState } from 'react'
+import { CSSProperties, useEffect, useRef, useState } from 'react'
 
-const ButtonCollection = ({ buttons, activeIndex, handleClick }) => {
-  const id = useId()
+const ButtonCollection = ({ activeIndex, children }) => {
   const collectionRef = useRef<HTMLDivElement>(null)
   const [backgroundPos, setBackgroundPos] = useState({
     width: 0,
@@ -45,14 +43,7 @@ const ButtonCollection = ({ buttons, activeIndex, handleClick }) => {
 
   return (
     <div ref={collectionRef} className='buttonCollection' style={style}>
-      {buttons.map(({ buttonName, text }, index) => {
-        const isActive = activeIndex === index
-        return (
-          <Button key={id + index} name={buttonName} isActive={isActive} handleClick={handleClick}>
-            {text}
-          </Button>
-        )
-      })}
+      {children}
     </div>
   )
 }

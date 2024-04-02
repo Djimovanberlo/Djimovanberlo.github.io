@@ -5,7 +5,7 @@ const clamp = (value: number) => Math.max(0, value)
 const isBetween = (value: number, floor: number, ceil: number) => value >= floor && value <= ceil
 
 const useScrollspy = ({ refs, offset = 0 }: { refs: RefObject<HTMLElement>[]; offset: number }) => {
-  const [activeId, setActiveId] = useState('')
+  const [activeId, setActiveId] = useState<RefObject<HTMLElement> | null>(null)
 
   useEffect(() => {
     const listener = () => {
@@ -21,11 +21,12 @@ const useScrollspy = ({ refs, offset = 0 }: { refs: RefObject<HTMLElement>[]; of
           const top = clamp(rect.top + scroll - offset)
           const bottom = clamp(rect.bottom + scroll - offset)
 
-          return { id: element.id, top, bottom }
+          return { ref, top, bottom }
         })
         .find(({ top, bottom }) => isBetween(scroll, top, bottom))
 
-      setActiveId(position?.id ?? '')
+      if (!position) return
+      setActiveId(position.ref ?? null)
     }
 
     listener()
