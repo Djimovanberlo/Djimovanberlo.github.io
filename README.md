@@ -4,8 +4,7 @@ About time I made a new portfolio. My previous one was made just after I'd finis
 
 ## About
 
-I have a background in psychology and creating and leading real-life games. In 2020 I retrained as full-stack developer and haven't looked back since. I especially enjoy the mix frontend development offers: a blend of logic, styling and layout architecture. I like to
-// TODO finish copy
+I have a background in psychology and creating and leading real-life games. In 2020 I retrained as full-stack developer and haven't looked back since. I especially enjoy the mix frontend development offers: a blend of logic, styling and layout architecture. I love to learn new things and explore new ideas. I take an investigative approach towards many themes, like history, society, philosophy and of course programming. In my free time I like to play with some code, cook up some games and develop some dinner. I like to walk around and explore my surroundings, and perhaps the occasional draping-over-the-couch. I'm married and I've lived in three countries (so far) and speak three languages (Dutch, English, Norwegian (bokmål)) - with some French and German sprinkled in. Have a look around! Or not, it's 100% up to you. Truly.,
 
 ## Stack
 
@@ -13,7 +12,53 @@ This project built using [React](https://react.dev/), [TypeScript](https://www.t
 
 ## Structure
 
-// TODO structure
+```
+src/
+├── assets/
+│   ├── fonts/
+│   └── images/
+│
+├── components/
+│   ├── about-content/
+│   ├── button/
+│   ├── button-collection/
+│   ├── contact-form/
+│   ├── input/
+│   ├── project-content/
+│   ├── projects-grid/
+│   ├── projects-modal/
+│   ├── stack-list/
+│   ├── tech-stack/
+│   ├── timeline/
+│   ├── typography/
+│
+├── interfaces/
+│   ├── layout/
+│
+├── layout/
+│   ├── header/
+│   ├── main/
+│   ├── nav/
+│   ├── section/
+│
+├── lib/
+│   ├── copy/
+│   ├── hooks/
+│   ├── validation/
+│
+├── sections/
+│   ├── about/
+│   ├── banner/
+│   ├── contat/
+│   ├── projects/
+│
+├── styles/
+│   ├── app/
+│   ├── functions/
+│   ├── main/
+│   ├── mixins/
+│   ├── variables/
+```
 
 ### `npm start`
 
